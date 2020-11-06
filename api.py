@@ -90,7 +90,9 @@ def parameters_to_model_parameters_conversion(intent, *args, **kwargs):
 		elif slot_type == "ontology_segmentation_criteria":
 			model_parameters["slots"].append({
 				"parameter_name": intent_name_prefix + prefix_lex_fixer(slot_name),
-				"slot_type" : prefix_lex_fixer(slot_mapping[0])
+				"slot_type" : prefix_lex_fixer(slot_mapping[0]),
+				"default_value": default_value
+
 			})
 			log.info("Ontology_segmentation_criteria added")
 
@@ -106,7 +108,7 @@ def parameters_to_model_parameters_conversion(intent, *args, **kwargs):
 					model_parameters["slots"].append({
 						"parameter_name": intent_name_prefix + parameter_name,
 						"slot_type": slot_type_,
-						"default_value": {"from": None, "to": None}
+						"default_value": {"from": None} if "from" in parameter_name else {"to":None}
 					})
 
 			else:
@@ -128,6 +130,6 @@ def parameters_to_model_parameters_conversion(intent, *args, **kwargs):
 
 def test(intent):
 	print("---------------------------------")
-	print(parameters_to_model_parameters_conversion(intent)["model_parameters"])
-
+	intent = parameters_to_model_parameters_conversion(intent)
+	json.dump(intent,open("output.json","w"),indent = 4)
 test(intent)
