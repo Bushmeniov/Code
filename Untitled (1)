@@ -1,0 +1,125 @@
+{
+  "actions": {
+    "answer": {
+      "backend": "audience-penetration-frequency-brand-investment-d",
+      "endpoint": {
+        "answer_id": "0",
+        "notebook": "/notebooks/audience-penetration-frequency-brand-investment-d.ipynb",
+        "type": "answer"
+      },
+      "region_name": "eu-west-1",
+      "service_type": "bspace",
+      "type": "answer",
+      "url": "aiola-azteka"
+    }
+  },
+  "arn": "aiola:dev:dialog:lex:intent:-ocufJBpS7G-q7AQNVRIsg",
+  "bot_name": "aiola-azteka",
+  "comparable": false,
+  "complex_params": true,
+  "description": "audience-penetration-frequency-brand-investment-d",
+  "estimated_time": 0,
+  "friendly_name": "audiencepenetrationfrequencybrandinvestmentda",
+  "name": "audiencepenetrationfrequencybrandinvestmentda",
+  "need_temporal": true,
+  "operation_mode": "overwrite",
+  "phrases": [
+    "Compare the top [10](top_number) shows with the average score of [None](brand_name) for [None](sub_categories)",
+    "top [10](top_number) shows with score of [None](brand_name) for [None](sub_categories)",
+    "top [10](top_number) shows with score of [None](brand_name) in  [None](sub_categories)",
+    "how do the top [10](top_number) shows compare with the average score of [None](brand_name) for [None](sub_categories)",
+    "how do the top [10](top_number) shows compare with the average score of [None](brand_name) in [None](sub_categories)"
+  ],
+  "region_name": "eu-west-1",
+  "slots": {
+    "brand_name": {
+      "clarifications": [
+        "which brand?"
+      ],
+      "default_value": null,
+      "name": "brand_name",
+      "ontology_mapping": [
+        "lex_brand"
+      ],
+      "slot_type": "brand",
+      "system_type": null,
+      "value": null
+    },
+    "sub_categories": {
+      "clarifications": [
+        "Which category?"
+      ],
+      "default_value": null,
+      "name": "sub_categories",
+      "ontology_mapping": [
+        "lex_sub_category"
+      ],
+      "slot_type": "sub_category",
+      "system_type": null,
+      "value": null
+    },
+    "time_period": {
+      "clarifications": [
+        "What time period?"
+      ],
+      "default_value": [
+        "All"
+      ],
+      "name": "time_period",
+      "ontology_mapping": [
+        "lex_time_period"
+      ],
+      "slot_type": "time_period",
+      "system_type": null,
+      "value": null
+    },
+
+    "top_number": {
+      "clarifications": [
+        "Which number?",
+        "What number?"
+      ],
+      "default_value": [
+        10
+      ],
+      "name": "top_number",
+      "ontology_mapping": [
+        "lex_number"
+      ],
+      "slot_type": "number",
+      "system_type": null,
+      "value": null
+    },
+    "advertiser_or_brand": {
+      "clarifications": [
+        "Which advertiser OR brand?"
+      ],
+      "default_value": null,
+      "mapping": [
+        "lex_advertiser",
+        "lex_brand"
+      ],
+      "name": "advertiser_or_brand",
+      "slot_type": "advertiser_or_brand_selector",
+      "system_type": null,
+      "value": null
+    },
+    "segment_by": {
+      "clarifications": [
+        "Which segmentation criteria?"
+      ],
+      "default_value": "network",
+      "name": "segment_by",
+      "ontology_mapping": [
+        "lex_ontology_segmentation_criteria"
+      ],
+      "slot_type": "ontology_segmentation_criteria",
+      "system_type": null,
+      "value": null
+    }
+
+  },
+  "tags": [
+
+  ]
+}
