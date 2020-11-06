@@ -105,11 +105,12 @@ def parameters_to_model_parameters_conversion(intent, *args, **kwargs):
 				slot_types = [builtin_slot_type_transformation[p] for p in parameter_names]
 
 				for parameter_name,slot_type_ in zip(parameter_names,slot_types):
-					model_parameters["slots"].append({
+					model_parameters["slots"].append( {
 						"parameter_name": intent_name_prefix + parameter_name,
 						"slot_type": slot_type_,
-						"default_value": {"from": None} if "from" in parameter_name else {"to":None}
-					})
+						"default_value": {"from": None} if parameter_name.endswith("from") else {"to":None}
+					} 
+					)
 
 			else:
 				slot_type_,model_builtin = slot_type_handler(slot_type)
